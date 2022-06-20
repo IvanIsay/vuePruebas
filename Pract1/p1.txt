@@ -1,0 +1,207 @@
+
+Verificar node: λ node -v
+
+Instalar vue: λ npm install -g vue-cli
+
+
+Crear  primer proyecto:  λ vue init webpack primeraApp
+
+    ? Project name primerapp
+    ? Project description A Vue.js project
+    ? Author IvanIsay <102552151+IvanIsay@users.noreply.github.com>
+    ? Vue build standalone
+    ? Install vue-router? No
+    ? Use ESLint to lint your code? No
+    ? Set up unit tests No
+    ? Setup e2e tests with Nightwatch? No
+    ? Should we run `npm install` for you after the project has been created? (recommended) npm
+
+
+
+Para comenzar: To get started:
+
+       λ cd primeraApp
+       λ npm run dev
+
+
+Conocemos los archivos :  main.js/ app.vue / HelloWorld.vue
+
+
+Editamos el template en app.vue
+
+    <template>
+      <div id="app">
+         <h1> Hola VUE </h1>
+      </div>
+    </template>
+
+
+
+Quitamos el archivo Helloworld.vue ya las importaciones del description
+
+    <script>
+    export default {
+      name: 'App',
+      components: { }
+    }
+    </script>
+
+
+================ COMPONETES & DIRECTIVAS ==================
+
+Creamos 1 archivo:  src/components/test.vue
+
+agregamos sintaxis VUE
+
+      <template>
+        <h2> Prueba de componente </h2>
+      </template>
+
+      <script>
+      </script>
+
+      <style>
+      </style>
+
+
+Importamos el componente desde APP.VUE
+
+
+        <template>
+          <div id="app">
+             <h1> Hola VUE </h1>
+             <Test/>
+          </div>
+        </template>
+
+        <script>
+          import Test from './components/test.vue'
+        export default {
+          name: 'App',
+          components: { Test }
+        }
+        </script>
+
+
+Procesamos info en el Script y la pasamos al template
+
+<template>
+  <h3>{{ user }}</h3>
+</template>
+
+
+<script>
+  export default{
+    data(){
+      return{
+        title:'Soy el titulo JS',
+        user:{ nombre: 'ivan', app: 'Guerra'}
+      }
+    }
+  }
+</script>
+
+
+
+Tambien Podemos pasar HTML del SCRIPT al TEMPLATE usando DIRECTIVAS
+
+      <template>
+        <div v-html= "myHtml"> </div>
+        <!-- <div v-text= "title"> </div> -->
+      </template>
+
+
+      <script>
+        export default{
+          data(){
+            return{
+              title:'Soy el titulo JS',
+              user:{ nombre: 'ivan', app: 'Guerra'},
+              myHtml: '<h3> Objeto HTML desde el script</h3>'
+            }
+          }
+        }
+      </script>
+
+
+
+
+Uso del directiva para el IF con Booleans
+
+      <template>
+      <div>
+
+      <!--  <div v-html= "myHtml"> </div>-->
+      <div v-text= "title"> </div>
+
+      <div v-if="showname">
+        <p> se  despliega el nombre del show </p>
+      </div>
+
+      </div>
+      </template>
+
+
+      <script>
+        export default{
+          data(){
+            return{
+              title:'Soy el titulo JS',
+              user:{ nombre: 'ivan', app: 'Guerra'},
+              myHtml: '<h3> Objeto HTML desde el script</h3>',
+              showname: true
+
+            }
+          }
+        }
+      </script>
+
+
+
+Directiva FOR para un arreglo de objetos
+
+        <template>
+
+        <div>
+
+        <!--  <div v-html= "myHtml"> </div>-->
+        <div v-text= "title"> </div>
+
+        <div v-if="showname">
+          <p> {{ user.nombre }}</p>
+        </div>
+        <div v-else>
+            <p> No se puede mostrar el Dato</p>
+        </div>
+
+        <hr>
+
+          <ul>
+            <li v-for="tarea in tareas">
+              {{ tarea.titulo}}
+            </li>
+          </ul>
+
+        </div>
+
+        </template>
+
+
+      <script>
+        export default{
+          data(){
+            return{
+              title:'Soy el titulo JS',
+              user:{ nombre: 'ivan', app: 'Guerra'},
+              myHtml: '<h3> Objeto HTML desde el script</h3>',
+              showname: false,
+              tareas:[{titulo:'Practica1'},{titulo:'Practica2'},{titulo:'Practica3'}]
+
+            }
+          }
+        }
+      </script>
+
+
+
+================ METODOS =================
