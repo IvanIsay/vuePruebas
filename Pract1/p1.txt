@@ -135,10 +135,11 @@ Uso del directiva para el IF con Booleans
       <div v-text= "title"> </div>
 
       <div v-if="showname">
-        <p> se  despliega el nombre del show </p>
+        <p> {{ user.nombre }}</p>
       </div>
-
-      </div>
+      <div v-else>
+          <p> No se puede mostrar el Dato</p>
+      </div>np
       </template>
 
 
@@ -204,4 +205,7 @@ Directiva FOR para un arreglo de objetos
 
 
 
+
+https://www.youtube.com/watch?v=X-u29o28I58&list=PLL0TiOXBeDajWIEXDUvQbzjV4D4GiruLy&index=5
 ================ METODOS =================
+                 Parte 5
