@@ -2,8 +2,9 @@
 
 <template>
   <div id="app">
-     <h1> Hola VUE </h1>
+     <h1> Soy la plantilla VUE </h1>
      <Test/>
+     <Users/>
   </div>
 </template>
 
@@ -11,9 +12,10 @@
 
 <script>
   import Test from './components/test.vue'
+  import Users from './components/users.vue'
 export default {
   name: 'App',
-  components: { Test }
+  components: { Test,Users }
 }
 </script>
 

@@ -209,3 +209,81 @@ Directiva FOR para un arreglo de objetos
 https://www.youtube.com/watch?v=X-u29o28I58&list=PLL0TiOXBeDajWIEXDUvQbzjV4D4GiruLy&index=5
 ================ METODOS =================
                  Parte 5
+
+
+
+1. Se crea un boton en el componente
+
+<button type="button" v-on:click="saludar"> Presioname </button>
+
+2. Se crea el espacio para los metodos y el metodo saludar
+
+<script>
+  export default{
+    data(){
+      return{
+        title:'Soy el titulo JS',
+        user:{ nombre: 'ivan', app: 'Guerra'},
+        myHtml: '<h3> Objeto HTML desde el script</h3>',
+        showname: true,
+        tareas:[{titulo:'Practica1'},{titulo:'Practica2'},{titulo:'Practica3'}]
+
+      }
+    },
+    methods:{
+      saludar(){alert('hello')}
+
+    }
+
+  }
+</script>
+
+
+3. parametros
+
+<button type="button" v-on:click="saludar(user.app)"> Presioname </button>
+
+    methods:{
+      saludar(name){alert('Hello: '+ name)}
+
+    }
+
+
+
+4. Two way databinding
+
+<input type="text" v-model="user.app">
+
+
+
+<script>
+  export default{
+    data(){
+      return{
+        title:'Soy el titulo JS',
+        user:{ nombre: 'ivan', app: 'Guerra'},
+        myHtml: '<h3> Objeto HTML desde el script</h3>',
+        showname: true,
+        tareas:[{titulo:'Practica1'},{titulo:'Practica2'},{titulo:'Practica3'}]
+
+      }
+    },
+    methods:{
+      saludar(name){alert('Hello: '+ name)}
+
+    }
+
+  }
+</script>
+
+
+5. Listeners
+
+<input type="text" v-on:keyup.enter="typendEnter"></input>
+
+methods:{
+      saludar(name){alert('Hello: '+ name)},
+      typing(e){console.log(e.target.value)},
+      typendEnter(e){console.log('Dio Enter')},
+
+    }
